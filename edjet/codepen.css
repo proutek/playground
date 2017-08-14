@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: -webkit-linear-gradient(#b1d4e4, #87bacf);
+}
+
+.edj-calendar {
+  font-family: "Helvetica";
+  width: 350px;
+  background-color: white;
+  border: 7px solid white;
+}
+
+.edj-calendar-header {
+  display: flex;
+  background-color: red;
+  padding: 0px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.edj-calendar-header-month {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.edj-calendar-header-cell {
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #ffffff transparent transparent;
+}
+
+.right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.edj-calendar-days-header {
+  display: flex;
+  padding: 0px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.edj-calendar-days-header-cell {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.edj-calendar-days {
+  display: flex;
+  padding: 0;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+
+}
+
+.edj-calendar-days-cell {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;  
+  height: 40px;
+  border: 2px solid white;
+}
+
+.edj-calendar-days-cell-grey {
+  background-color: #e3e3e3;
+  color: black;
+}
+
+.edj-calendar-days-cell-today {
+  background-color: red;
+  color: white;
+}
+
+.edj-calendar-days-cell-bank_holiday {
+  box-shadow: inset 0px 0px 2px 5px rgba(0,134,224,1);
+}

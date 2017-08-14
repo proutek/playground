@@ -1,0 +1,18 @@
+Developed and tested in Chrome - 53.0.2785.143
+Doesn't run locally due cross origin request restriction (loading of bank holidays file).
+
+
+Use (with node+npm)
+-------------------
+npm install
+npm start
+
+Comments:
+- I'm pretty lame with CSS.
+- HTML template could be taken into separate file like in modern frameworks with some inject-markup language (separation of view from model)
+
+
+Time spent:
+-----------
+4h coding
+6h html+css (especially css)
