@@ -20,15 +20,13 @@ var EdjCalendarBankHolidays = {};
 
 class EdjCalendar {
 
-	constructor(elem, calendarId) {
+	constructor(elem) {
 		let todayDate = new Date();
 		this.elem = elem;
 		this.selected = {
 			"month": todayDate.getMonth(),
 			"year": todayDate.getFullYear()
 		}
-
-		this.calendarId = calendarId;
 	}
 
 	getNumberOfDays(year, month) {
@@ -52,15 +50,14 @@ class EdjCalendar {
 
 		// insert variables into HTML template
 		const headerText = EdjCalendarMonths[this.selected.month] + " " + this.selected.year;
-		const calendarId = "edjet-calendar-" + this.calendarId;
 
 		// Fill HTML template with real data
 		let output = `
 		<div class="edj-calendar">
   			<div class="edj-calendar-header">
-	    		<div class="edj-calendar-header-cell left" onClick="document.getElementById('`+ calendarId + `').calendarInstance.setPreviousMonth();"></div>
+	    		<div class="edj-calendar-header-cell left" onClick="this.parentElement.parentElement.parentElement.calendarInstance.setPreviousMonth();"></div>
     			<div class="edj-calendar-header-month"><p>` + headerText + `</p></div>
-    			<div class="edj-calendar-header-cell right" onClick="document.getElementById('`+ calendarId + `').calendarInstance.setNextMonth();"></div>
+    			<div class="edj-calendar-header-cell right" onClick="this.parentElement.parentElement.parentElement.calendarInstance.setNextMonth();"></div>
   			</div>
   			<div class="edj-calendar-days-header">
 			    <div class="edj-calendar-days-header-cell"><p>Sa</p></div>
@@ -184,14 +181,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			console.log(e);
 		}).then((e) => {
 			var calendarElemList = document.querySelectorAll("[edjCalendar]");
-			var calendarId = 0;
 
 			for (var el of calendarElemList) {
 				if  (el.innerHTML === "") {
-					el.calendarInstance = new EdjCalendar(el, calendarId);
-					el.id = "edjet-calendar-" + calendarId;
+					el.calendarInstance = new EdjCalendar(el);
 					el.calendarInstance.render();
-					calendarId++;
 				}
 			}
 		});
